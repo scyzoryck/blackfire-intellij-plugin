@@ -1,21 +1,21 @@
 <idea-plugin>
-    <id>org.jetbrains.plugins.template</id>
-    <name>Template</name>
-    <vendor>JetBrains</vendor>
+    <id>com.github.scyzoryck.blackfireintellijplugin</id>
+    <name>blackfire-intellij-plugin</name>
+    <vendor>scyzoryck</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="org.jetbrains.plugins.template.services.MyApplicationService"/>
-        <projectService serviceImplementation="org.jetbrains.plugins.template.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.github.scyzoryck.blackfireintellijplugin.services.MyApplicationService"/>
+        <projectService serviceImplementation="com.github.scyzoryck.blackfireintellijplugin.services.MyProjectService"/>
         <fileType name="Blackfire Scenario" implementationClass="com.github.scyzoryck.blackfire.language.BlackfireScenarioFileType"
                   fieldName="INSTANCE" language="BlackfireScenario" extensions="bkf"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="org.jetbrains.plugins.template.listeners.MyProjectManagerListener"
+        <listener class="com.github.scyzoryck.blackfireintellijplugin.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
     <actions>
